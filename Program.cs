@@ -9,6 +9,7 @@ var monitorUp = false;
 var votes = new Dictionary<string, int>();
 var voteLock = new object();
 var voteWindow = TimeSpan.FromSeconds(3);
+TwitchClient? client = null;
 
 // --- Command sets ---
 var camCommands   = new HashSet<string> { "cam1a", "cam1b", "cam1c", "cam2a", "cam2b", "cam3", "cam4a", "cam4b", "cam5", "cam6", "cam7" };
@@ -64,7 +65,7 @@ _ = Task.Run(async () =>
 var credentials    = new ConnectionCredentials("galactic_amy", "fwo0m79e6bgfh6b0vfn1x6tnz6yn4g");
 var clientOptions  = new ClientOptions();
 var webSocketClient = new WebSocketClient(clientOptions);
-var client         = new TwitchClient(webSocketClient);
+client         = new TwitchClient(webSocketClient);
 
 client.Initialize(credentials, "galactic_amy");
 client.OnConnected      += async (s, e) => { Console.WriteLine("[Twitch] Connected!"); await client.JoinChannelAsync("galactic_amy"); };
@@ -113,7 +114,7 @@ async Task OnMessageReceived(object? sender, OnMessageReceivedArgs e)
 async Task ExecuteCommand(string command)
 {
 
-    await client.SendMessageAsync("galactic_amy", $"Chat voted: !{command}");
+    await client!.SendMessageAsync("galactic_amy", $"Chat voted: !{command}");
 
     var (x, y) = coords[command];
 
