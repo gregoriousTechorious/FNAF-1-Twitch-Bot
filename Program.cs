@@ -4,18 +4,18 @@ using TwitchLib.Client.Models;
 using TwitchLib.Communication.Clients;
 using TwitchLib.Communication.Models;
 
-// --- State ---
+// STATE
 var monitorUp = false;
 var votes = new Dictionary<string, int>();
 var voteLock = new object();
 var voteWindow = TimeSpan.FromSeconds(3);
 TwitchClient? client = null;
 
-// --- Command sets ---
+// COMMAND LIST
 var camCommands   = new HashSet<string> { "cam1a", "cam1b", "cam1c", "cam2a", "cam2b", "cam3", "cam4a", "cam4b", "cam5", "cam6", "cam7" };
 var panelCommands = new HashSet<string> { "leftdoor", "rightdoor", "leftlight", "rightlight" };
 
-// --- Coords ---
+// COORDS
 var coords = new Dictionary<string, (int x, int y)>
 {
     { "monitor",    (580,  674) },
@@ -36,7 +36,7 @@ var coords = new Dictionary<string, (int x, int y)>
     { "rightlight", (1219, 475) },
 };
 
-// --- Vote loop ---
+// VOTE LOOP
 _ = Task.Run(async () =>
 {
     while (true)
@@ -61,7 +61,7 @@ _ = Task.Run(async () =>
     }
 });
 
-// --- Twitch bot ---
+// TWITCH
 var credentials    = new ConnectionCredentials("galactic_amy", "fwo0m79e6bgfh6b0vfn1x6tnz6yn4g");
 var clientOptions  = new ClientOptions();
 var webSocketClient = new WebSocketClient(clientOptions);
@@ -75,7 +75,7 @@ client.OnMessageReceived += OnMessageReceived;
 await client.ConnectAsync();
 await Task.Delay(Timeout.Infinite);
 
-// --- Message handler ---
+// MESSAGE STUFF
 async Task OnMessageReceived(object? sender, OnMessageReceivedArgs e)
 {
     var message = e.ChatMessage.Message.ToLower().Trim();
@@ -110,7 +110,7 @@ async Task OnMessageReceived(object? sender, OnMessageReceivedArgs e)
     await Task.CompletedTask;
 }
 
-// --- Command executor ---
+// COMMANDS
 async Task ExecuteCommand(string command)
 {
 
