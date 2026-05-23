@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "NUkmzZaFRD4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\joseh\\Desktop\\vscode stuff\\TwitchFNAF\\TwitchFNAF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\joseh\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0\\microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\joseh\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.0\\microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\joseh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\10.0.0\\system.diagnostics.diagnosticsource.10.0.0.nupkg.sha512",
+    "C:\\Users\\joseh\\.nuget\\packages\\twitchlib.client\\4.0.1\\twitchlib.client.4.0.1.nupkg.sha512",
+    "C:\\Users\\joseh\\.nuget\\packages\\twitchlib.client.enums\\4.0.1\\twitchlib.client.enums.4.0.1.nupkg.sha512",
+    "C:\\Users\\joseh\\.nuget\\packages\\twitchlib.client.models\\4.0.1\\twitchlib.client.models.4.0.1.nupkg.sha512",
+    "C:\\Users\\joseh\\.nuget\\packages\\twitchlib.communication\\2.0.1\\twitchlib.communication.2.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
