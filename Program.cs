@@ -4,6 +4,8 @@ using TwitchLib.Client.Models;
 using TwitchLib.Communication.Clients;
 using TwitchLib.Communication.Models;
 
+DotNetEnv.Env.Load();
+
 // STATE
 var monitorUp = false;
 var votes = new Dictionary<string, int>();
@@ -62,7 +64,9 @@ _ = Task.Run(async () =>
 });
 
 // TWITCH
-var credentials    = new ConnectionCredentials("galactic_amy", "fwo0m79e6bgfh6b0vfn1x6tnz6yn4g");
+var token = Environment.GetEnvironmentVariable("TWITCH_TOKEN")
+    ?? throw new Exception("TWITCH_TOKEN environment variable not set");
+var credentials = new ConnectionCredentials("galactic_amy", token);
 var clientOptions  = new ClientOptions();
 var webSocketClient = new WebSocketClient(clientOptions);
 client         = new TwitchClient(webSocketClient);

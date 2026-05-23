@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TwitchFNAF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f7cf0289d08cade697168962996ba2ff838abe7")]
 [assembly: System.Reflection.AssemblyProductAttribute("TwitchFNAF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TwitchFNAF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
